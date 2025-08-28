@@ -17,7 +17,7 @@ int angleToPWM(int angle)
     return pwm_val;
 }
 
-int homePosition(Adafruit_PWMServoDriver pwm)
+bool homePosition(Adafruit_PWMServoDriver pwm)
 {
     int baseRotationJoint=90;
     int shoulderJoint=90;
