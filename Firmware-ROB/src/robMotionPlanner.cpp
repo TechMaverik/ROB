@@ -37,9 +37,9 @@ void motionPlanner(Adafruit_PWMServoDriver pwm,int baseRotationJoint,int shoulde
     int endEffectorPWM=angleToPWM(endEffector);
 
     pwm.setPWM(0, 0, baseRotationJointPWM);
-    pwm.setPWM(0, 0, shoulderJointPWM);
-    pwm.setPWM(0, 0, elbowJointPWM);
-    pwm.setPWM(0, 0, wristJointPWM);
-    pwm.setPWM(0, 0, endEffectorPWM);
+    pwm.setPWM(1, 0, shoulderJointPWM);
+    pwm.setPWM(2, 0, elbowJointPWM);
+    pwm.setPWM(3, 0, wristJointPWM);
+    pwm.setPWM(4, 0, endEffectorPWM);
 
 }
