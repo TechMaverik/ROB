@@ -1,18 +1,19 @@
 #include <WiFi.h>
 #include <Arduino.h>
-#include <Adafruit_SSD1306.h>
-#include "robDisplay.h"
 
-void connect_to_wifi(int led, Adafruit_SSD1306 display)
+void connect_to_wifi(int led)
 {
-    const char* ssid = "YOUR_SSID";
-    const char* password = "YOUR_PASSWORD";
+    const char* ssid = "Ai Lab";
+    const char* password = "Welc0me@123";
     WiFi.begin(ssid, password);
-    showMessage("Connecting .....",3,0,0,display);
+    Serial.println("Connecting ...");
+  
     while (WiFi.status() != WL_CONNECTED) {    
+        Serial.print(".");
         digitalWrite(led,HIGH);
         delay(500);
         digitalWrite(led,LOW);
         delay(500);
   }
+  digitalWrite(led,HIGH);
 }
