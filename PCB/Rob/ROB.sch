@@ -714,30 +714,6 @@ RJ45 Jack connectors&lt;br&gt;
  &lt;/ul&gt;
  &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
-<package name="1X6MTA" urn="urn:adsk.eagle:footprint:8080281/1" library_version="4">
-<description>&lt;b&gt;AMP MTA connector&lt;/b&gt;</description>
-<wire x1="12.1412" y1="6.35" x2="12.1412" y2="3.81" width="0.4064" layer="21"/>
-<wire x1="12.1412" y1="3.81" x2="12.1412" y2="-3.81" width="0.4064" layer="21"/>
-<wire x1="-11.9888" y1="-3.81" x2="-11.9888" y2="3.81" width="0.4064" layer="21"/>
-<wire x1="-11.9888" y1="3.81" x2="-11.9888" y2="6.35" width="0.4064" layer="21"/>
-<wire x1="-11.9888" y1="6.35" x2="12.1412" y2="6.35" width="0.4064" layer="21"/>
-<wire x1="-11.9888" y1="3.81" x2="12.1412" y2="3.81" width="0.3048" layer="21"/>
-<wire x1="-11.9888" y1="-3.81" x2="12.1412" y2="-3.81" width="0.4064" layer="21"/>
-<pad name="3" x="1.9812" y="0" drill="1.6764" shape="long" rot="R90"/>
-<pad name="2" x="5.9436" y="0" drill="1.6764" shape="long" rot="R90"/>
-<pad name="1" x="9.906" y="0" drill="1.6764" shape="long" rot="R90"/>
-<pad name="4" x="-1.9812" y="0" drill="1.6764" shape="long" rot="R90"/>
-<pad name="5" x="-5.9436" y="0" drill="1.6764" shape="long" rot="R90"/>
-<pad name="6" x="-9.906" y="0" drill="1.6764" shape="long" rot="R90"/>
-<text x="-4.2926" y="-7.0612" size="1.778" layer="25">&gt;NAME</text>
-<text x="-11.3949" y="4.3508" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="9.398" y1="-0.508" x2="10.414" y2="0.508" layer="21"/>
-<rectangle x1="5.4356" y1="-0.508" x2="6.4516" y2="0.508" layer="21"/>
-<rectangle x1="1.4732" y1="-0.508" x2="2.4892" y2="0.508" layer="21"/>
-<rectangle x1="-2.4892" y1="-0.508" x2="-1.4732" y2="0.508" layer="21"/>
-<rectangle x1="-6.4516" y1="-0.508" x2="-5.4356" y2="0.508" layer="21"/>
-<rectangle x1="-10.414" y1="-0.508" x2="-9.398" y2="0.508" layer="21"/>
-</package>
 <package name="10X04MTA" urn="urn:adsk.eagle:footprint:8080315/1" library_version="4">
 <description>&lt;b&gt;AMP MTA connector&lt;/b&gt;&lt;p&gt;
 Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
@@ -800,12 +776,6 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 </package>
 </packages>
 <packages3d>
-<package3d name="1X6MTA" urn="urn:adsk.eagle:package:8081593/1" type="box" library_version="4">
-<description>&lt;b&gt;AMP MTA connector&lt;/b&gt;</description>
-<packageinstances>
-<packageinstance name="1X6MTA"/>
-</packageinstances>
-</package3d>
 <package3d name="10X04MTA" urn="urn:adsk.eagle:package:8081620/1" type="box" library_version="4">
 <description>&lt;b&gt;AMP MTA connector&lt;/b&gt;&lt;p&gt;
 Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
@@ -828,27 +798,6 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 </package3d>
 </packages3d>
 <symbols>
-<symbol name="MTA-06" urn="urn:adsk.eagle:symbol:8079821/1" library_version="4">
-<wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
-<wire x1="13.97" y1="-1.905" x2="-1.27" y2="-1.905" width="0.254" layer="94"/>
-<wire x1="13.97" y1="-1.905" x2="13.97" y2="1.27" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="1.27" x2="13.97" y2="1.27" width="0.254" layer="94"/>
-<circle x="0" y="0" radius="0.635" width="0.254" layer="94"/>
-<circle x="2.54" y="0" radius="0.635" width="0.254" layer="94"/>
-<circle x="5.08" y="0" radius="0.635" width="0.254" layer="94"/>
-<circle x="7.62" y="0" radius="0.635" width="0.254" layer="94"/>
-<circle x="10.16" y="0" radius="0.635" width="0.254" layer="94"/>
-<circle x="12.7" y="0" radius="0.635" width="0.254" layer="94"/>
-<text x="15.24" y="0" size="1.778" layer="95">&gt;NAME</text>
-<text x="15.24" y="-3.81" size="1.778" layer="96">&gt;VALUE</text>
-<text x="-2.54" y="-1.27" size="1.27" layer="95">1</text>
-<pin name="1" x="0" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
-<pin name="2" x="2.54" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
-<pin name="3" x="5.08" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
-<pin name="4" x="7.62" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
-<pin name="5" x="10.16" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
-<pin name="6" x="12.7" y="-2.54" visible="off" length="short" direction="pas" rot="R90"/>
-</symbol>
 <symbol name="MTA-1_4" urn="urn:adsk.eagle:symbol:8079832/1" library_version="4">
 <wire x1="-3.81" y1="1.27" x2="-3.81" y2="-1.905" width="0.254" layer="94"/>
 <wire x1="6.35" y1="-1.905" x2="-3.81" y2="-1.905" width="0.254" layer="94"/>
@@ -900,32 +849,6 @@ Source: http://ecommas.tycoelectronics.com .. ENG_CD_640456_W.pdf</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="MTA06-156" urn="urn:adsk.eagle:component:8082736/2" prefix="J" uservalue="yes" library_version="4">
-<description>&lt;b&gt;AMP connector&lt;/b&gt;</description>
-<gates>
-<gate name="G$1" symbol="MTA-06" x="-5.08" y="0"/>
-</gates>
-<devices>
-<device name="" package="1X6MTA">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
-<connect gate="G$1" pin="4" pad="4"/>
-<connect gate="G$1" pin="5" pad="5"/>
-<connect gate="G$1" pin="6" pad="6"/>
-</connects>
-<package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:8081593/1"/>
-</package3dinstances>
-<technologies>
-<technology name="">
-<attribute name="POPULARITY" value="1" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="MTA04-100" urn="urn:adsk.eagle:component:8082794/2" prefix="J" uservalue="yes" library_version="4">
 <description>&lt;b&gt;AMP connector&lt;/b&gt;</description>
 <gates>
@@ -1088,6 +1011,135 @@ general purpose rectifier, 1 A</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="con-lstb" urn="urn:adsk.eagle:library:162">
+<description>&lt;b&gt;Pin Headers&lt;/b&gt;&lt;p&gt;
+Naming:&lt;p&gt;
+MA = male&lt;p&gt;
+# contacts - # rows&lt;p&gt;
+W = angled&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="MA06-1" urn="urn:adsk.eagle:footprint:8287/1" library_version="2">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="-6.985" y1="1.27" x2="-5.715" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-5.715" y1="1.27" x2="-5.08" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="-0.635" x2="-5.715" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="0.635" x2="-4.445" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-4.445" y1="1.27" x2="-3.175" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-3.175" y1="1.27" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="-0.635" x2="-3.175" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-3.175" y1="-1.27" x2="-4.445" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-4.445" y1="-1.27" x2="-5.08" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-7.62" y1="0.635" x2="-7.62" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-6.985" y1="1.27" x2="-7.62" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-7.62" y1="-0.635" x2="-6.985" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-5.715" y1="-1.27" x2="-6.985" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="0.635" x2="-1.905" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="1.27" x2="-0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="0" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="-1.27" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="-1.27" x2="-2.54" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="1.905" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="1.27" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="-0.635" x2="1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="0.635" x2="3.175" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="3.175" y1="1.27" x2="4.445" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="4.445" y1="1.27" x2="5.08" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="5.08" y1="-0.635" x2="4.445" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="4.445" y1="-1.27" x2="3.175" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="3.175" y1="-1.27" x2="2.54" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="0" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="-0.635" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="-1.27" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="5.08" y1="0.635" x2="5.715" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="5.715" y1="1.27" x2="6.985" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="6.985" y1="1.27" x2="7.62" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="7.62" y1="-0.635" x2="6.985" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="6.985" y1="-1.27" x2="5.715" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="5.715" y1="-1.27" x2="5.08" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="7.62" y1="0.635" x2="7.62" y2="-0.635" width="0.1524" layer="21"/>
+<pad name="1" x="-6.35" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="2" x="-3.81" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="3" x="-1.27" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="4" x="1.27" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="5" x="3.81" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="6" x="6.35" y="0" drill="1.016" shape="long" rot="R90"/>
+<text x="-7.62" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-6.985" y="-2.921" size="1.27" layer="21" ratio="10">1</text>
+<text x="5.715" y="1.651" size="1.27" layer="21" ratio="10">6</text>
+<text x="-2.54" y="-2.921" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="-4.064" y1="-0.254" x2="-3.556" y2="0.254" layer="51"/>
+<rectangle x1="-6.604" y1="-0.254" x2="-6.096" y2="0.254" layer="51"/>
+<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
+<rectangle x1="3.556" y1="-0.254" x2="4.064" y2="0.254" layer="51"/>
+<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
+<rectangle x1="6.096" y1="-0.254" x2="6.604" y2="0.254" layer="51"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="MA06-1" urn="urn:adsk.eagle:package:8340/1" type="box" library_version="2">
+<description>PIN HEADER</description>
+<packageinstances>
+<packageinstance name="MA06-1"/>
+</packageinstances>
+</package3d>
+</packages3d>
+<symbols>
+<symbol name="MA06-1" urn="urn:adsk.eagle:symbol:8286/1" library_version="2">
+<wire x1="3.81" y1="-10.16" x2="-1.27" y2="-10.16" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="2.54" y2="-2.54" width="0.6096" layer="94"/>
+<wire x1="1.27" y1="-5.08" x2="2.54" y2="-5.08" width="0.6096" layer="94"/>
+<wire x1="1.27" y1="-7.62" x2="2.54" y2="-7.62" width="0.6096" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="2.54" y2="2.54" width="0.6096" layer="94"/>
+<wire x1="1.27" y1="0" x2="2.54" y2="0" width="0.6096" layer="94"/>
+<wire x1="1.27" y1="5.08" x2="2.54" y2="5.08" width="0.6096" layer="94"/>
+<wire x1="-1.27" y1="7.62" x2="-1.27" y2="-10.16" width="0.4064" layer="94"/>
+<wire x1="3.81" y1="-10.16" x2="3.81" y2="7.62" width="0.4064" layer="94"/>
+<wire x1="-1.27" y1="7.62" x2="3.81" y2="7.62" width="0.4064" layer="94"/>
+<text x="-1.27" y="-12.7" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-1.27" y="8.382" size="1.778" layer="95">&gt;NAME</text>
+<pin name="1" x="7.62" y="-7.62" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="2" x="7.62" y="-5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="3" x="7.62" y="-2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="4" x="7.62" y="0" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="5" x="7.62" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="6" x="7.62" y="5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MA06-1" urn="urn:adsk.eagle:component:8378/2" prefix="SV" uservalue="yes" library_version="2">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="MA06-1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MA06-1">
+<connects>
+<connect gate="1" pin="1" pad="1"/>
+<connect gate="1" pin="2" pad="2"/>
+<connect gate="1" pin="3" pad="3"/>
+<connect gate="1" pin="4" pad="4"/>
+<connect gate="1" pin="5" pad="5"/>
+<connect gate="1" pin="6" pad="6"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:8340/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+<attribute name="POPULARITY" value="28" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1099,12 +1151,12 @@ general purpose rectifier, 1 A</description>
 </classes>
 <parts>
 <part name="BOARD1" library="ESP32-DEVKITV1" deviceset="ESP32DEVKITV1" device=""/>
-<part name="J1" library="con-amp" library_urn="urn:adsk.eagle:library:127" deviceset="MTA06-156" device="" package3d_urn="urn:adsk.eagle:package:8081593/1"/>
 <part name="J2" library="con-amp" library_urn="urn:adsk.eagle:library:127" deviceset="MTA04-100" device="" package3d_urn="urn:adsk.eagle:package:8081620/1"/>
 <part name="D1" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="1N4004" device="" package3d_urn="urn:adsk.eagle:package:43336/1"/>
 <part name="J3" library="con-amp" library_urn="urn:adsk.eagle:library:127" deviceset="MTA04-100" device="" package3d_urn="urn:adsk.eagle:package:8081620/1"/>
 <part name="J4" library="con-amp" library_urn="urn:adsk.eagle:library:127" deviceset="MTA05-100" device="" package3d_urn="urn:adsk.eagle:package:8081622/1"/>
 <part name="J5" library="con-amp" library_urn="urn:adsk.eagle:library:127" deviceset="MTA02-156" device="" package3d_urn="urn:adsk.eagle:package:8081562/1"/>
+<part name="SV1" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA06-1" device="" package3d_urn="urn:adsk.eagle:package:8340/1"/>
 </parts>
 <sheets>
 <sheet>
@@ -1113,10 +1165,6 @@ general purpose rectifier, 1 A</description>
 <instances>
 <instance part="BOARD1" gate="G$1" x="48.26" y="15.24" smashed="yes">
 <attribute name="NAME" x="51.435" y="73.025" size="1.27" layer="95"/>
-</instance>
-<instance part="J1" gate="G$1" x="139.7" y="50.8" smashed="yes" rot="R90">
-<attribute name="NAME" x="139.7" y="66.04" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="143.51" y="66.04" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="J2" gate="G$1" x="142.24" y="40.64" smashed="yes">
 <attribute name="NAME" x="149.86" y="40.64" size="1.778" layer="95"/>
@@ -1138,16 +1186,15 @@ general purpose rectifier, 1 A</description>
 <attribute name="NAME" x="-10.16" y="17.78" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-10.16" y="13.97" size="1.778" layer="96"/>
 </instance>
+<instance part="SV1" gate="1" x="116.84" y="5.08" smashed="yes">
+<attribute name="VALUE" x="115.57" y="-7.62" size="1.778" layer="96"/>
+<attribute name="NAME" x="115.57" y="13.462" size="1.778" layer="95"/>
+</instance>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="SCL" class="0">
-<segment>
-<pinref part="J1" gate="G$1" pin="4"/>
-<wire x1="142.24" y1="58.42" x2="154.94" y2="58.42" width="0.1524" layer="91"/>
-<label x="160.02" y="58.42" size="1.778" layer="95"/>
-</segment>
 <segment>
 <pinref part="BOARD1" gate="G$1" pin="D22"/>
 <wire x1="86.36" y1="58.42" x2="99.06" y2="58.42" width="0.1524" layer="91"/>
@@ -1163,13 +1210,13 @@ general purpose rectifier, 1 A</description>
 <wire x1="165.1" y1="38.1" x2="165.1" y2="27.94" width="0.1524" layer="91"/>
 <label x="165.1" y="17.78" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="SV1" gate="1" pin="4"/>
+<wire x1="124.46" y1="5.08" x2="134.62" y2="5.08" width="0.1524" layer="91"/>
+<label x="139.7" y="5.08" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="SDA" class="0">
-<segment>
-<pinref part="J1" gate="G$1" pin="3"/>
-<wire x1="142.24" y1="55.88" x2="154.94" y2="55.88" width="0.1524" layer="91"/>
-<label x="160.02" y="55.88" size="1.778" layer="95"/>
-</segment>
 <segment>
 <pinref part="BOARD1" gate="G$1" pin="D21"/>
 <wire x1="86.36" y1="50.8" x2="99.06" y2="50.8" width="0.1524" layer="91"/>
@@ -1185,6 +1232,11 @@ general purpose rectifier, 1 A</description>
 <wire x1="167.64" y1="38.1" x2="167.64" y2="27.94" width="0.1524" layer="91"/>
 <label x="167.64" y="15.24" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="SV1" gate="1" pin="3"/>
+<wire x1="124.46" y1="2.54" x2="134.62" y2="2.54" width="0.1524" layer="91"/>
+<label x="139.7" y="2.54" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -1197,11 +1249,6 @@ general purpose rectifier, 1 A</description>
 <pinref part="J2" gate="G$1" pin="1"/>
 <wire x1="139.7" y1="38.1" x2="139.7" y2="27.94" width="0.1524" layer="91"/>
 <label x="139.7" y="22.86" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="J1" gate="G$1" pin="6"/>
-<wire x1="142.24" y1="63.5" x2="154.94" y2="63.5" width="0.1524" layer="91"/>
-<label x="160.02" y="63.5" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="D1" gate="1" pin="C"/>
@@ -1223,6 +1270,11 @@ general purpose rectifier, 1 A</description>
 <wire x1="-12.7" y1="15.24" x2="-12.7" y2="5.08" width="0.1524" layer="91"/>
 <label x="-12.7" y="0" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="SV1" gate="1" pin="6"/>
+<wire x1="124.46" y1="10.16" x2="134.62" y2="10.16" width="0.1524" layer="91"/>
+<label x="139.7" y="10.16" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="5V" class="0">
 <segment>
@@ -1234,16 +1286,6 @@ general purpose rectifier, 1 A</description>
 <pinref part="J2" gate="G$1" pin="2"/>
 <wire x1="142.24" y1="38.1" x2="142.24" y2="27.94" width="0.1524" layer="91"/>
 <label x="142.24" y="20.32" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="J1" gate="G$1" pin="2"/>
-<wire x1="142.24" y1="53.34" x2="154.94" y2="53.34" width="0.1524" layer="91"/>
-<label x="160.02" y="53.34" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="J1" gate="G$1" pin="1"/>
-<wire x1="142.24" y1="50.8" x2="154.94" y2="50.8" width="0.1524" layer="91"/>
-<label x="160.02" y="50.8" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="J3" gate="G$1" pin="2"/>
@@ -1259,6 +1301,16 @@ general purpose rectifier, 1 A</description>
 <pinref part="J5" gate="G$1" pin="1"/>
 <wire x1="-15.24" y1="15.24" x2="-15.24" y2="7.62" width="0.1524" layer="91"/>
 <label x="-15.24" y="-5.08" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SV1" gate="1" pin="2"/>
+<wire x1="124.46" y1="0" x2="134.62" y2="0" width="0.1524" layer="91"/>
+<label x="139.7" y="0" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="SV1" gate="1" pin="1"/>
+<wire x1="124.46" y1="-2.54" x2="134.62" y2="-2.54" width="0.1524" layer="91"/>
+<label x="139.7" y="-2.54" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="LED" class="0">
@@ -1309,6 +1361,12 @@ general purpose rectifier, 1 A</description>
 <pinref part="BOARD1" gate="G$1" pin="D14"/>
 <wire x1="45.72" y1="35.56" x2="30.48" y2="35.56" width="0.1524" layer="91"/>
 <label x="17.78" y="35.56" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="SV1" gate="1" pin="5"/>
+<wire x1="124.46" y1="7.62" x2="134.62" y2="7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

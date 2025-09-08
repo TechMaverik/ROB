@@ -872,7 +872,13 @@ design rules under a new name.</description>
 <wire x1="88.9" y1="77.47" x2="43.18" y2="77.47" width="1.27" layer="16"/>
 <wire x1="43.18" y1="77.47" x2="39.37" y2="73.66" width="1.27" layer="16"/>
 <wire x1="31.75" y1="15.24" x2="19.05" y2="15.24" width="1.27" layer="16"/>
-<wire x1="19.05" y1="15.24" x2="15.24" y2="50.8" width="0" layer="19" extent="1-1"/>
+<contactref element="BOARD1" pad="GND@1"/>
+<wire x1="15.24" y1="25.4" x2="15.24" y2="22.86" width="1.27" layer="16"/>
+<wire x1="15.24" y1="22.86" x2="16.51" y2="21.59" width="1.27" layer="16"/>
+<wire x1="16.51" y1="21.59" x2="17.78" y2="21.59" width="1.27" layer="16"/>
+<wire x1="17.78" y1="21.59" x2="19.05" y2="20.32" width="1.27" layer="16"/>
+<wire x1="19.05" y1="20.32" x2="19.05" y2="15.24" width="1.27" layer="16"/>
+<wire x1="15.24" y1="25.4" x2="15.24" y2="50.8" width="0" layer="19" extent="1-1"/>
 <wire x1="48.26" y1="7.62" x2="31.75" y2="15.24" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="5V">
@@ -897,7 +903,7 @@ design rules under a new name.</description>
 <wire x1="12.7" y1="50.8" x2="12.7" y2="48.26" width="1.27" layer="16"/>
 <wire x1="12.7" y1="48.26" x2="16.51" y2="44.45" width="1.27" layer="16"/>
 <wire x1="72.644" y1="52.324" x2="72.644" y2="67.31" width="1.27" layer="16"/>
-<wire x1="16.51" y1="44.45" x2="64.77" y2="44.45" width="1.27" layer="16"/>
+<wire x1="19.05" y1="44.45" x2="64.77" y2="44.45" width="1.27" layer="16"/>
 <wire x1="64.77" y1="44.45" x2="72.644" y2="52.324" width="1.27" layer="16"/>
 <wire x1="72.644" y1="67.31" x2="76.6064" y2="67.31" width="1.27" layer="16"/>
 <wire x1="34.29" y1="15.24" x2="34.29" y2="11.43" width="1.27" layer="16"/>
@@ -905,7 +911,11 @@ design rules under a new name.</description>
 <wire x1="33.02" y1="10.16" x2="17.78" y2="10.16" width="1.27" layer="16"/>
 <wire x1="17.78" y1="10.16" x2="16.51" y2="11.43" width="1.27" layer="16"/>
 <wire x1="16.51" y1="11.43" x2="16.51" y2="15.24" width="1.27" layer="16"/>
-<wire x1="16.51" y1="15.24" x2="12.7" y2="50.8" width="0" layer="19" extent="1-1"/>
+<wire x1="16.51" y1="15.24" x2="16.51" y2="17.78" width="1.27" layer="16"/>
+<wire x1="16.51" y1="17.78" x2="10.16" y2="24.13" width="1.27" layer="16"/>
+<wire x1="16.51" y1="44.45" x2="19.05" y2="44.45" width="1.27" layer="16"/>
+<wire x1="10.16" y1="38.1" x2="16.51" y2="44.45" width="1.27" layer="16"/>
+<wire x1="10.16" y1="24.13" x2="10.16" y2="38.1" width="1.27" layer="16"/>
 </signal>
 <signal name="LED">
 <contactref element="BOARD1" pad="D23"/>
