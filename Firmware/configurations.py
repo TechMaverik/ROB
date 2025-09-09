@@ -1,0 +1,11 @@
+"configurations.py"
+
+SSID = "Ai Lab"
+PSW = "Welc0me@123"
+CHANNEL_1 = 0
+CHANNEL_2 = 4
+CHANNEL_3 = 8
+CHANNEL_4 = 12
+CHANNEL_5 = 1
+DEFAULT_ANGLE = 90
+SPEED = 1
