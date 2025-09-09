@@ -53,8 +53,10 @@ class MotionPlanner:
         return True
 
     def move(self, channel: int, up_down_logic: bool, steps: int, arm: str) -> bool:
+        current_position = self.feedback[arm]
+        to_positon = current_position  # Initialize to current position
+
         if up_down_logic is True:
-            current_position = self.feedback[arm]
             for step in range(1, steps, 1):
                 to_positon = current_position + step
                 self.servos.position(index=channel, degrees=to_positon)
@@ -64,10 +66,8 @@ class MotionPlanner:
             return True
 
         if up_down_logic is False:
-            current_position = self.feedback[arm]
             for step in range(1, steps, 1):
                 to_positon = current_position - step
-
                 self.servos.position(index=channel, degrees=to_positon)
                 time.sleep(0.02)
                 print(step, to_positon)
