@@ -95,32 +95,58 @@ class MotionPlanner:
         else:
             self.move(self.channel_1, False, angle_difference["base_diff"] * -1, "base")
         if angle_difference["shoulder_diff"] > 0:
-            pass
+            self.move(
+                self.channel_2,
+                True,
+                angle_difference["shoulder_diff"],
+                "shoulder",
+            )
         else:
-            pass
+            self.move(
+                self.channel_2,
+                False,
+                angle_difference["shoulder_diff"] * -1,
+                "shoulder",
+            )
         if angle_difference["elbow_diff"] > 0:
-            pass
+            self.move(
+                self.channel_3,
+                True,
+                angle_difference["elbow_diff"],
+                "elbow",
+            )
         else:
-            pass
+            self.move(
+                self.channel_3,
+                False,
+                angle_difference["elbow_diff"] * -1,
+                "elbow",
+            )
         if angle_difference["wrist_diff"] > 0:
-            pass
+            self.move(
+                self.channel_4,
+                True,
+                angle_difference["wrist_diff"],
+                "wrist",
+            )
         else:
-            pass
+            self.move(
+                self.channel_4,
+                False,
+                angle_difference["wrist_diff"] * -1,
+                "wrist",
+            )
         if angle_difference["end_effector_diff"] > 0:
-            pass
+            self.move(
+                self.channel_5,
+                True,
+                angle_difference["end_effector_diff"],
+                "end_effector",
+            )
         else:
-            pass
-
-
-MotionPlanner().set_default_position()
-print(MotionPlanner().feedback)
-MotionPlanner().software_feedback_control_system(
-    {
-        "base": 150,
-        "shoulder": 10,
-        "elbow": 10,
-        "wrist": 10,
-        "end_effector": 10,
-    }
-)
-print(MotionPlanner().feedback)
+            self.move(
+                self.channel_5,
+                False,
+                angle_difference["end_effector_diff"] * -1,
+                "end_effector",
+            )
