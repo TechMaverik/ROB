@@ -4,7 +4,7 @@ import configurations
 from machine import Pin
 
 
-class Wifi:
+class WifiCon:
 
     def connect(self):
         wlan = network.WLAN(network.STA_IF)

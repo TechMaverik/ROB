@@ -24,34 +24,40 @@ class MotionPlanner:
     def set_default_position(self):
         """Set all servos to their default position."""
         self.servos.position(index=self.channel_1, degrees=self.default_angle)
+        self.feedback["base"] = self.default_angle
         time.sleep(0.25)
         self.servos.position(index=self.channel_2, degrees=self.default_angle)
+        self.feedback["shoulder"] = self.default_angle
         time.sleep(0.25)
         self.servos.position(index=self.channel_3, degrees=self.default_angle)
+        self.feedback["elbow"] = self.default_angle
         time.sleep(0.25)
         self.servos.position(index=self.channel_4, degrees=self.default_angle)
+        self.feedback["wrist"] = self.default_angle
         time.sleep(0.25)
         self.servos.position(index=self.channel_5, degrees=self.default_angle)
+        self.feedback["base"] = self.default_angle
         time.sleep(0.25)
+        return self.feedback
 
-    def sweep(self, channel: int) -> bool:
+    def sweep(self, channel: int, arm: str) -> bool:
         """Sweep a servo from 0 to 180 degrees and back to default position."""
         for angle in range(self.default_angle, 181, self.speed):
             self.servos.position(index=channel, degrees=angle)
-            self.feedback["base"] = angle
-            time.sleep(0.02)
+            self.feedback[arm] = angle
+            time.sleep(0.10)
         for angle in range(181, self.default_angle, -self.speed):
             self.servos.position(index=channel, degrees=angle)
-            self.feedback["base"] = angle
-            time.sleep(0.02)
+            self.feedback[arm] = angle
+            time.sleep(0.10)
         for angle in range(self.default_angle, 0, -self.speed):
             self.servos.position(index=channel, degrees=angle)
-            self.feedback["base"] = angle
-            time.sleep(0.02)
+            self.feedback[arm] = angle
+            time.sleep(0.10)
         for angle in range(0, self.default_angle, self.speed):
             self.servos.position(index=channel, degrees=angle)
-            self.feedback["base"] = angle
-            time.sleep(0.02)
+            self.feedback[arm] = angle
+            time.sleep(0.10)
         return True
 
     def move(self, channel: int, up_down_logic: bool, steps: int, arm: str) -> bool:
@@ -73,7 +79,7 @@ class MotionPlanner:
             for step in range(1, steps, 1):
                 to_positon = current_position + step
                 self.servos.position(index=channel, degrees=to_positon)
-                time.sleep(0.02)
+                time.sleep(0.10)
                 # print(step, to_positon)
             self.feedback[arm] = to_positon
             return True
@@ -82,7 +88,7 @@ class MotionPlanner:
             for step in range(1, steps, 1):
                 to_positon = current_position - step
                 self.servos.position(index=channel, degrees=to_positon)
-                time.sleep(0.02)
+                time.sleep(0.10)
                 # print(step, to_positon)
             self.feedback[arm] = to_positon
             return True
@@ -93,7 +99,9 @@ class MotionPlanner:
         shoulder_diff = final_position["shoulder"] - self.feedback["shoulder"]
         elbow_diff = final_position["elbow"] - self.feedback["elbow"]
         wrist_diff = final_position["wrist"] - self.feedback["wrist"]
-        end_effector_diff = self.feedback["end_effector"]
+        end_effector_diff = (
+            final_position["end_effector"] - self.feedback["end_effector"]
+        )
         return {
             "base_diff": base_diff,
             "shoulder_diff": shoulder_diff,
