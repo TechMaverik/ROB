@@ -4,6 +4,7 @@ HOME_POS = {
     "elbow": 90,  # 0-180
     "wrist": 90,  # 0-180
     "end_effector": 73,  # 10-73
+    "pick": 90,
 }
 
 TEST_POS_MAX = {
@@ -12,6 +13,7 @@ TEST_POS_MAX = {
     "elbow": 179,  # 0-180
     "wrist": 179,  # 0-180
     "end_effector": 73,  # 10-73
+    "pick": 180,
 }
 
 TEST_POS_MIN = {
@@ -20,4 +22,5 @@ TEST_POS_MIN = {
     "elbow": 0,  # 0-180
     "wrist": 0,  # 0-180
     "end_effector": 10,  # 10-73
+    "pick": 0,
 }

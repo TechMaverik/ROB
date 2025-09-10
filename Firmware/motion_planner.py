@@ -17,6 +17,7 @@ class MotionPlanner:
         self.channel_3 = configurations.CHANNEL_3
         self.channel_4 = configurations.CHANNEL_4
         self.channel_5 = configurations.CHANNEL_5
+        self.channel_6 = configurations.CHANNEL_6
         self.default_angle = configurations.DEFAULT_ANGLE
         self.feedback = configurations.soft_feedback
         self.speed = configurations.SPEED
@@ -36,7 +37,10 @@ class MotionPlanner:
         self.feedback["wrist"] = self.default_angle
         time.sleep(0.25)
         self.servos.position(index=self.channel_5, degrees=self.default_angle)
-        self.feedback["base"] = self.default_angle
+        self.feedback["end_effector"] = self.default_angle
+        time.sleep(0.25)
+        self.servos.position(index=self.channel_6, degrees=self.default_angle)
+        self.feedback["pick"] = self.default_angle
         time.sleep(0.25)
         return self.feedback
 
@@ -79,7 +83,7 @@ class MotionPlanner:
             for step in range(1, steps, 1):
                 to_positon = current_position + step
                 self.servos.position(index=channel, degrees=to_positon)
-                time.sleep(0.10)
+                time.sleep(0.05)
                 # print(step, to_positon)
             self.feedback[arm] = to_positon
             return True
@@ -88,7 +92,7 @@ class MotionPlanner:
             for step in range(1, steps, 1):
                 to_positon = current_position - step
                 self.servos.position(index=channel, degrees=to_positon)
-                time.sleep(0.10)
+                time.sleep(0.05)
                 # print(step, to_positon)
             self.feedback[arm] = to_positon
             return True
@@ -102,12 +106,14 @@ class MotionPlanner:
         end_effector_diff = (
             final_position["end_effector"] - self.feedback["end_effector"]
         )
+        pick_diff = final_position["pick"] - self.feedback["pick"]
         return {
             "base_diff": base_diff,
             "shoulder_diff": shoulder_diff,
             "elbow_diff": elbow_diff,
             "wrist_diff": wrist_diff,
             "end_effector_diff": end_effector_diff,
+            "pick_diff": pick_diff,
         }
 
     def software_feedback_control_system(self, final_position: dict) -> dict:
@@ -179,5 +185,19 @@ class MotionPlanner:
                 False,
                 angle_difference["end_effector_diff"] * -1,
                 "end_effector",
+            )
+        if angle_difference["pick_diff"] > 0:
+            self.move(
+                self.channel_6,
+                True,
+                angle_difference["pick_diff"],
+                "pick",
+            )
+        else:
+            self.move(
+                self.channel_6,
+                False,
+                angle_difference["pick_diff"] * -1,
+                "pick",
             )
         return self.feedback
