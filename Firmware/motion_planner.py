@@ -22,6 +22,7 @@ class MotionPlanner:
         self.speed = configurations.SPEED
 
     def set_default_position(self):
+        """Set all servos to their default position."""
         self.servos.position(index=self.channel_1, degrees=self.default_angle)
         time.sleep(0.25)
         self.servos.position(index=self.channel_2, degrees=self.default_angle)
@@ -34,6 +35,7 @@ class MotionPlanner:
         time.sleep(0.25)
 
     def sweep(self, channel: int) -> bool:
+        """Sweep a servo from 0 to 180 degrees and back to default position."""
         for angle in range(self.default_angle, 181, self.speed):
             self.servos.position(index=channel, degrees=angle)
             self.feedback["base"] = angle
@@ -53,6 +55,17 @@ class MotionPlanner:
         return True
 
     def move(self, channel: int, up_down_logic: bool, steps: int, arm: str) -> bool:
+        """Move the Robotic Arm.
+
+        Args:
+            channel (int): select channel
+            up_down_logic (bool): up or down logic which is True or False
+            steps (int): number of steps to move
+            arm (str): motor name
+
+        Returns:
+            bool: Boolean value indicating success
+        """
         current_position = self.feedback[arm]
         to_positon = current_position  # Initialize to current position
 
@@ -61,7 +74,7 @@ class MotionPlanner:
                 to_positon = current_position + step
                 self.servos.position(index=channel, degrees=to_positon)
                 time.sleep(0.02)
-                print(step, to_positon)
+                # print(step, to_positon)
             self.feedback[arm] = to_positon
             return True
 
@@ -70,11 +83,12 @@ class MotionPlanner:
                 to_positon = current_position - step
                 self.servos.position(index=channel, degrees=to_positon)
                 time.sleep(0.02)
-                print(step, to_positon)
+                # print(step, to_positon)
             self.feedback[arm] = to_positon
             return True
 
     def difference_engine(self, final_position: dict) -> dict:
+        """Calculate the difference between current and final positions."""
         base_diff = final_position["base"] - self.feedback["base"]
         shoulder_diff = final_position["shoulder"] - self.feedback["shoulder"]
         elbow_diff = final_position["elbow"] - self.feedback["elbow"]
@@ -88,7 +102,15 @@ class MotionPlanner:
             "end_effector_diff": end_effector_diff,
         }
 
-    def software_feedback_control_system(self, final_position: dict):
+    def software_feedback_control_system(self, final_position: dict) -> dict:
+        """Feedback control system to move the arm to the final position.
+
+        Args:
+            final_position (dict): final position dictionary
+
+        Returns:
+            dict: software feedback dictionary
+        """
         angle_difference = self.difference_engine(final_position=final_position)
         if angle_difference["base_diff"] > 0:
             self.move(self.channel_1, True, angle_difference["base_diff"], "base")
@@ -150,3 +172,4 @@ class MotionPlanner:
                 angle_difference["end_effector_diff"] * -1,
                 "end_effector",
             )
+        return self.feedback
