@@ -10,6 +10,8 @@ CHANNEL_5 = 4
 CHANNEL_6 = 5
 DEFAULT_ANGLE = 90
 SPEED = 1
+OK_HEADER = "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\n\r\n"
+BAD_HEADER = "HTTP/1.1 400 Bad Request\r\nContent-Type: application/json\r\n\r\n"
 soft_feedback = {
     "base": 90,
     "shoulder": 90,
