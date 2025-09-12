@@ -30,7 +30,7 @@ while True:
     except ValueError:
         continue
 
-    if method == "POST" and path == "/router/move/":
+    if method == "POST" and path == "/rob/move/":
         data = parse_json_from_request(request)
         if data:
             response_data = {
@@ -44,6 +44,15 @@ while True:
             response = configurations.BAD_HEADER + ujson.dumps(
                 {"error": "Invalid JSON"}
             )
+
+    elif method == "GET" and path == "/":       
+        response_data = {
+            "device": "Rob Robotic Arm",
+            "version": 1.0,
+            "status": "Ready",
+        }
+        response = configurations.OK_HEADER + ujson.dumps(response_data)
+        
     else:
         response = configurations.BAD_HEADER + ujson.dumps(
             {"error": "Unsupported method or path"}
@@ -51,3 +60,4 @@ while True:
 
     cl.send(response)
     cl.close()
+
