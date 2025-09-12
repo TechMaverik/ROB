@@ -99,14 +99,14 @@ class MotionPlanner:
 
     def difference_engine(self, final_position: dict) -> dict:
         """Calculate the difference between current and final positions."""
-        base_diff = final_position["base"] - self.feedback["base"]
-        shoulder_diff = final_position["shoulder"] - self.feedback["shoulder"]
-        elbow_diff = final_position["elbow"] - self.feedback["elbow"]
-        wrist_diff = final_position["wrist"] - self.feedback["wrist"]
+        base_diff = int(final_position["base"]) - int(self.feedback["base"])
+        shoulder_diff = int(final_position["shoulder"]) - int(self.feedback["shoulder"])
+        elbow_diff = int(final_position["elbow"]) - int(self.feedback["elbow"])
+        wrist_diff = int(final_position["wrist"]) - int(self.feedback["wrist"])
         end_effector_diff = (
-            final_position["end_effector"] - self.feedback["end_effector"]
+            int(final_position["end_effector"]) - int(self.feedback["end_effector"])
         )
-        pick_diff = final_position["pick"] - self.feedback["pick"]
+        pick_diff = int(final_position["pick"]) - int(self.feedback["pick"])
         return {
             "base_diff": base_diff,
             "shoulder_diff": shoulder_diff,

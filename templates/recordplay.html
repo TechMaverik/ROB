@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ROB Studio Configurations</title>
+<title>ROB Studio Record-Play</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 <style>
   body {
@@ -84,8 +84,8 @@
 <body>
   <div class="sidebar">
     <a href="/">Controls</a>   
-    <a href="/configurations">Configurations</a>
-    <a href="#record-play">Records & Play</a>
+    <a href="/devices">Devices</a>
+    <a href="/record-play">Record & Play</a>
     <a href="#record-play">About Team</a>
    
     
@@ -94,38 +94,39 @@
   <div class="main-content">
     <h1>ROB Studio</h1>
     <form>
-      <div class="form-group">
-        <label for="sel1">Select Robot</label>
-        <select class="form-control" id="sel1">
-          <option>ROB version 1</option>
-          <option>ROB version 2</option>        
-        </select>
-      </div>
+      
+    <table class="table">
+    <thead>
+      <tr class="success">
+        <th>Base</th>
+        <th>Shoulder</th>
+        <th>Elbow</th>
+        <th>Wrist Pitch</th>
+        <th>Wrist Roll</th>
+        <th>Pick</th>
+      </tr>
+    </thead>
+    </table>
 
-      <div class="form-group">
-        <label for="usr">IP Address:</label>
-          <input type="text" class="form-control" id="usr">
-      </div>
     </form>
     
   </div>
   <div class="button-row">
-    <table>
-       
-         <tr>
-            <td><button type="button" class="btn btn-custom-black" id="clear-btn">Search</button></td>
-        </tr> 
-         <tr>
-            <td><button type="button" class="btn btn-custom-black" id="clear-btn">Save</button></td>
-        </tr>   
-         
-        <tr><td><button type="button" class="btn btn-custom-black" id="stop-btn">Clear</button></td>
+    <table>      
+     
+        <tr>
+            <td><button type="button" class="btn btn-custom-black" id="start-btn">Play</button></td>
             
-        </tr>        
-         <tr>
-            <td><button type="button" class="btn btn-custom-black" id="clear-btn">Connect</button></td>
         </tr>
-       
+        <tr>
+            <td><button type="button" class="btn btn-custom-black" id="stop-btn">Repeat</button></td>            
+        </tr>    
+        <tr>
+            <td><button type="button" class="btn btn-custom-black" id="stop-btn">Clear</button></td>            
+        </tr>  
+        <tr>
+            <td><button type="button" class="btn btn-custom-black" id="clear-btn">Exit</button></td>
+        </tr>
     </table>
       
     </div>
