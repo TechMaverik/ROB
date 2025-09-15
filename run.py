@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from handlers import Handlers
+from Firmware import prepositions
 import json
 
 
@@ -13,17 +14,7 @@ def version():
 
 @app.route("/")
 def home():
-    return render_template(
-        "home.html",
-        feedback={
-            "base": 90,
-            "shoulder": 90,
-            "elbow": 90,
-            "wrist": 90,
-            "end_effector": 90,
-            "pick": 90,
-        },
-    )
+    return render_template("home.html", feedback=prepositions.HOME_POS)
 
 
 @app.route("/devices")
@@ -39,9 +30,13 @@ def record_play():
 @app.route("/move-to-position", methods=["POST", "GET"])
 def robot_position():
     if request.method == "POST":
-        feedback = Handlers().robot_position()
-        print(feedback["received"])
-        return render_template("home.html", feedback=feedback["received"])
+        if request.form["action"] == "move":
+            feedback = Handlers().robot_position()
+            return render_template("home.html", feedback=feedback["received"])
+        elif request.form["action"] == "home":
+            payload = prepositions.HOME_POS
+            feedback = Handlers().robot_home_position(payload)
+            return render_template("home.html", feedback=feedback["received"])
 
 
 @app.route("/settings", methods=["POST", "GET"])

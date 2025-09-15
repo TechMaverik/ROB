@@ -21,3 +21,7 @@ class Handlers:
         }
         feedback = RobSDK().robot_position(payload, "http://10.120.3.187/rob/move/")
         return feedback
+
+    def robot_home_position(self, payload):
+        feedback = RobSDK().robot_position(payload, "http://10.120.3.187/rob/move/")
+        return feedback
