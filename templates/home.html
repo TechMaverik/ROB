@@ -104,32 +104,32 @@
     <form action="move-to-position" method="post">
       <div class="mb-4">
         <label for="slider1" class="form-label">Joint 1 (Base Rotation)</label>
-        <input type="range" class="form-range" min="0" max="180" value="90" id="slider1" name="slider1" />
+        <input type="range" class="form-range" min="0" max="180" value="{{ feedback['base'] }}" id="slider1" name="slider1" />
         <span class="slider-value" id="value1">90°</span>
       </div>
       <div class="mb-4">
         <label for="slider2" class="form-label">Joint 2 (Shoulder)</label>
-        <input type="range" class="form-range" min="0" max="180" value="90" id="slider2" name="slider2" />
+        <input type="range" class="form-range" min="0" max="180" value="{{ feedback['shoulder'] }}" id="slider2" name="slider2" />
         <span class="slider-value" id="value2">90°</span>
       </div>
       <div class="mb-4">
         <label for="slider3" class="form-label">Joint 3 (Elbow)</label>
-        <input type="range" class="form-range" min="0" max="180" value="90" id="slider3" name="slider3" />
+        <input type="range" class="form-range" min="0" max="180" value="{{ feedback['elbow'] }}" id="slider3" name="slider3" />
         <span class="slider-value" id="value3">90°</span>
       </div>
       <div class="mb-4">
         <label for="slider4" class="form-label">Joint 4 (Wrist Pitch)</label>
-        <input type="range" class="form-range" min="0" max="180" value="90" id="slider4" name="slider4" />
+        <input type="range" class="form-range" min="0" max="180" value="{{ feedback['wrist'] }}" id="slider4" name="slider4" />
         <span class="slider-value" id="value4">90°</span>
       </div>
       <div class="mb-4">
         <label for="slider5" class="form-label">Joint 5 (Wrist Roll)</label>
-        <input type="range" class="form-range" min="0" max="180" value="90" id="slider5" name="slider5" />
+        <input type="range" class="form-range" min="0" max="180" value="{{ feedback['end_effector'] }}" id="slider5" name="slider5" />
         <span class="slider-value" id="value5">90°</span>
       </div>
       <div class="mb-4">
         <label for="slider6" class="form-label">Joint 6 (Gripper)</label>
-        <input type="range" class="form-range" min="0" max="180" value="90" id="slider6" name="slider6" />
+        <input type="range" class="form-range" min="0" max="180" value="{{ feedback['pick'] }}" id="slider6" name="slider6" />
         <span class="slider-value" id="value6">90°</span>
       </div>
       <div class="mb-4">

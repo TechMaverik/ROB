@@ -19,4 +19,5 @@ class Handlers:
             "end_effector": wrist_roll,
             "pick": gripper,
         }
-        response = RobSDK().robot_position(payload, "http://10.120.3.169/rob/move/")
+        feedback = RobSDK().robot_position(payload, "http://10.120.3.187/rob/move/")
+        return feedback

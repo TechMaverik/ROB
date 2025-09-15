@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from handlers import Handlers
+import json
 
 
 app = Flask(__name__)
@@ -12,7 +13,17 @@ def version():
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    return render_template(
+        "home.html",
+        feedback={
+            "base": 90,
+            "shoulder": 90,
+            "elbow": 90,
+            "wrist": 90,
+            "end_effector": 90,
+            "pick": 90,
+        },
+    )
 
 
 @app.route("/devices")
@@ -28,8 +39,9 @@ def record_play():
 @app.route("/move-to-position", methods=["POST", "GET"])
 def robot_position():
     if request.method == "POST":
-        response = Handlers().robot_position()
-        return render_template("home.html", response=response)
+        feedback = Handlers().robot_position()
+        print(feedback["received"])
+        return render_template("home.html", feedback=feedback["received"])
 
 
 @app.route("/settings", methods=["POST", "GET"])
