@@ -18,6 +18,12 @@ class WifiCon:
         password = configurations.PSW
         wlan.connect(ssid, password)
         while not wlan.isconnected():
+            self.oled.fill(0)
+            self.oled.text("ROB Ver 1.0", 0, 0)
+            self.oled.text("Powered by", 0, 10)
+            self.oled.text("HLEngine3", 0, 20)
+            self.oled.text("Connecting...", 0, 30)
+            self.oled.show()
             print("Connecting...")
             led.on()
             time.sleep(1)
