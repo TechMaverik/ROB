@@ -26,19 +26,19 @@ TEST_POS_MIN = {
 }
 
 TEST_BASE_MIN = {
-    "base": 20,  # 0-180
-    "shoulder": 20,  # 15-165
-    "elbow": 20,  # 0-180
-    "wrist": 20,  # 0-180
-    "end_effector": 20,  # 10-73
-    "pick": 30,
+    "base": 60,  # 0-180
+    "shoulder": 60,  # 15-165
+    "elbow": 60,  # 0-180
+    "wrist": 60,  # 0-180
+    "end_effector": 60,  # 10-73
+    "pick": 80,
 }
 
 TEST_BASE_MAX = {
-    "base": 170,  # 0-180
-    "shoulder": 170,  # 15-165
-    "elbow": 170,  # 0-180
-    "wrist": 170,  # 0-180
-    "end_effector": 170,  # 10-73
-    "pick": 160,
+    "base": 130,  # 0-180
+    "shoulder": 130,  # 15-165
+    "elbow": 130,  # 0-180
+    "wrist": 130,  # 0-180
+    "end_effector": 130,  # 10-73
+    "pick": 150,
 }
