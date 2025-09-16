@@ -35,7 +35,15 @@ def robot_position():
             return render_template("home.html", feedback=feedback["received"])
         elif request.form["action"] == "home":
             payload = prepositions.HOME_POS
-            feedback = Handlers().robot_home_position(payload)
+            feedback = Handlers().robot_position_payload(payload)         
+            return render_template("home.html", feedback=feedback["received"])
+        elif request.form["action"] == "test":
+            payload = prepositions.TEST_BASE_MIN
+            feedback = Handlers().robot_position_payload(payload)     
+            payload = prepositions.TEST_BASE_MAX     
+            feedback = Handlers().robot_position_payload(payload) 
+            payload = prepositions.HOME_POS
+            feedback = Handlers().robot_position_payload(payload) 
             return render_template("home.html", feedback=feedback["received"])
 
 
