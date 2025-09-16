@@ -1,5 +1,6 @@
 from flask import request
 from HLEngine3.robsdk import RobSDK
+from mappers import Mappers
 
 
 class Handlers:
@@ -45,8 +46,10 @@ class Handlers:
             "end_effector": wrist_roll,
             "pick": gripper,
         }
+        Mappers().record_position(base,shoulder,elbow,wrist_pitch,wrist_roll,gripper)
         self.robot_pos_storage.append(payload)
         return payload
 
     def robot_position_clear(self):
         self.robot_pos_storage.clear()
+        Mappers().delete_record()

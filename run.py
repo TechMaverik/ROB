@@ -47,9 +47,10 @@ def robot_position():
             return render_template("home.html", feedback=feedback["received"])
         elif request.form["action"] == "record":
             savedposition = Handlers().robot_position_storage()
+            print(savedposition)
             return render_template("home.html", feedback=savedposition)
         elif request.form["action"] == "clear":
-            savedposition = Handlers().robot_position_clear()
+            Handlers().robot_position_clear()                      
             return render_template("home.html", feedback=prepositions.HOME_POS)
 
 
