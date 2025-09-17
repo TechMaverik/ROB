@@ -24,9 +24,22 @@ def devices():
 
 @app.route("/record-play")
 def record_play():
-    return render_template("recordplay.html")
+    records=Handlers().read_robot_position_records()
+    return render_template("recordplay.html",records=records)
 
-
+@app.route("/memorized-movements",methods=["POST", "GET"])
+def record_play_repeat():    
+    records=Handlers().read_robot_position_records()
+    if request.method == "POST":
+        if request.form["action"] == "play": 
+            Handlers().play_recorded()           
+            return render_template("recordplay.html",records=records)
+        elif request.form["action"] == "repeat":           
+            return render_template("recordplay.html",records=records)
+        elif request.form["action"] == "clear":   
+            Handlers().robot_position_clear()        
+            return render_template("recordplay.html",records=records)
+    
 @app.route("/move-to-position", methods=["POST", "GET"])
 def robot_position():
     if request.method == "POST":

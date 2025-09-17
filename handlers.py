@@ -24,11 +24,11 @@ class Handlers:
             "end_effector": wrist_roll,
             "pick": gripper,
         }
-        feedback = RobSDK().robot_position(payload, "http://10.120.3.169/rob/move/")
+        feedback = RobSDK().robot_position(payload, "http://10.120.3.170/rob/move/")
         return feedback
 
     def robot_position_payload(self, payload):
-        feedback = RobSDK().robot_position(payload, "http://10.120.3.169/rob/move/")
+        feedback = RobSDK().robot_position(payload, "http://10.120.3.170/rob/move/")
         return feedback
 
     def robot_position_storage(self):
@@ -53,3 +53,28 @@ class Handlers:
     def robot_position_clear(self):
         self.robot_pos_storage.clear()
         Mappers().delete_record()
+
+    def read_robot_position_records(self):
+        records=Mappers().select_record()
+        return (records)
+    
+    def play_recorded(self):
+        records=Mappers().select_record()
+        for record in records:
+            base = record[1]
+            shoulder = record[2]
+            elbow = record[3]
+            wrist_pitch = record[4]
+            wrist_roll = record[5]
+            gripper = record[6]
+            payload = {
+                "base": base,
+                "shoulder": shoulder,
+                "elbow": elbow,
+                "wrist": wrist_pitch,
+                "end_effector": wrist_roll,
+                "pick": gripper,
+            }
+            print(payload)
+            feedback = RobSDK().robot_position(payload, "http://10.120.3.170/rob/move/")
+

@@ -60,3 +60,10 @@ class Mappers:
         rows = self.cursor.fetchall()
         self.conn.close()
         return rows
+    
+    def select_record(self):       
+        select_query = "SELECT * FROM records"
+        self.cursor.execute(select_query)
+        rows = self.cursor.fetchall()
+        self.conn.close()
+        return rows

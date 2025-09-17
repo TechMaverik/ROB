@@ -96,45 +96,33 @@
     
     Powered by
     <image src="/static/hlengine3.png" alt="Logo" style="width:100%; height:auto;"></image>
-   
-    
-    
   </div>
   <div class="main-content">
-    <form>
+    <form action="/memorized-movements" method="post">
       
     <table class="table">
     <thead>
       <tr class="success">
-        <th>Base</th>
-        <th>Shoulder</th>
-        <th>Elbow</th>
-        <th>Wrist Pitch</th>
-        <th>Wrist Roll</th>
-        <th>Pick</th>
+        
+        <th>Records</th>        
       </tr>
     </thead>
+    <tbody>
+      <tr class="success">
+        {% if records %}
+        {% for dataset in records %}
+        <tr><td>{{dataset}}</td></tr>
+        {% endfor %}
+        {% endif %}
+      </tr>
+    </tbody>
     </table>
+    <button type="submit" class="btn btn-custom-black" name="action" value="play">Play</button>
+    <button type="submit" class="btn btn-custom-black" name="action" value="repeat" disabled>Repeat</button>
+    <button type="submit" class="btn btn-custom-black" name="action" value="clear">Clear</button>
 
-    </form>
-    
-  </div>
-  <div class="button-row">
-    <table>      
-     
-        <tr>
-            <td><button type="button" class="btn btn-custom-black" id="start-btn">Play</button></td>
-            
-        </tr>
-        <tr>
-            <td><button type="button" class="btn btn-custom-black" id="stop-btn">Repeat</button></td>            
-        </tr>    
-        <tr>
-            <td><button type="button" class="btn btn-custom-black" id="stop-btn">Clear</button></td>            
-        </tr>  
-    </table>
-      
-    </div>
+    </form>    
+  </div> 
 <script>
   function updateValue(sliderId, valueId) {
     const slider = document.getElementById(sliderId);
