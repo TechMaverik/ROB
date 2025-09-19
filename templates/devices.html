@@ -101,7 +101,7 @@
     
   </div>
   <div class="main-content">
-    <form>
+    <form action="/settings" method="post">
       <div class="form-group">
         <label for="sel1">Select Robot</label>
         <select class="form-control" id="sel1">
@@ -112,16 +112,12 @@
       <br>
       <div class="form-group">
         <label for="usr">IP Address:</label>
-          <input type="text" class="form-control" id="usr">
+          <input type="text" class="form-control" value={{ip}} id="ip" name="ip" />
       </div>
       <br>
-      <div class="form-group">
-        <button type="button" class="btn btn-custom-black" id="clear-btn">Search</button>
-        <button type="button" class="btn btn-custom-black" id="clear-btn">Save</button>
-        <button type="button" class="btn btn-custom-black" id="stop-btn">Clear</button>
-        <button type="button" class="btn btn-custom-black" id="clear-btn">Test Connection</button>
-        
-
+      <div class="form-group">        
+        <button type="submit" class="btn btn-custom-black" name="action" value="save">Save</button>
+        <button type="submit" class="btn btn-custom-black" name="action" value="test">Test Connection</button>
       </div>
       
     </form>

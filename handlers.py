@@ -24,11 +24,13 @@ class Handlers:
             "end_effector": wrist_roll,
             "pick": gripper,
         }
-        feedback = RobSDK().robot_position(payload, "http://10.120.3.170/rob/move/")
+        ip=self.get_robot_ip()
+        feedback = RobSDK().robot_position(payload, "http://"+ip+"/rob/move/")
         return feedback
 
     def robot_position_payload(self, payload):
-        feedback = RobSDK().robot_position(payload, "http://10.120.3.170/rob/move/")
+        ip=self.get_robot_ip()
+        feedback = RobSDK().robot_position(payload, "http://"+ip+"/rob/move/")
         return feedback
 
     def robot_position_storage(self):
@@ -77,13 +79,12 @@ class Handlers:
                 "end_effector": wrist_roll,
                 "pick": gripper,
             }
-            print(payload)
-            feedback = RobSDK().robot_position(payload, "http://10.120.3.170/rob/move/")
+            ip=self.get_robot_ip()
+            feedback = RobSDK().robot_position(payload, "http://"+ip+"/rob/move/")
 
     def add_robot_ip(self):
         ip = request.form.get("ip")
-        self.robot_ip_address = ip
-        print(ip)
+        self.robot_ip_address = ip        
         Mappers().add_configurations((ip,))
         return ip
 
@@ -93,6 +94,17 @@ class Handlers:
         return "Deleted"
 
     def get_robot_ip(self):
+        records = Mappers().select_configuration()
+        for record in records:
+            ip = record[1]
+        return ip
+    
+    def test_robot_connection(self):
+        ip=Mappers().select_configuration()
+        status = RobSDK().get_status("http://"+ip)
+        return status
+
+    def select_configuration(self):
         records = Mappers().select_configuration()
         for record in records:
             ip = record[1]

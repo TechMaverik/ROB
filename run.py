@@ -19,8 +19,8 @@ def home():
 
 @app.route("/devices")
 def devices():
-    return render_template("devices.html")
-
+    ip = Handlers().select_configuration()    
+    return render_template("devices.html",ip=ip)
 
 @app.route("/record-play")
 def record_play():
@@ -72,10 +72,15 @@ def robot_position():
 @app.route("/settings", methods=["POST", "GET"])
 def settings():
     if request.method == "POST":
-        if request.form["action"] == "move":
-            Handlers().add_robot_ip()
-    return render_template("devices.html")
-
+        if request.form["action"] == "save":
+            Handlers().delete_robot_ip()
+            ip_address = Handlers().add_robot_ip()     
+            return render_template("devices.html",ip=ip_address)
+        
+        if request.form["action"] == "test":
+            status = Handlers().test_robot_connection()
+            print(status)
+            return render_template("devices.html", status=status)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=2025, debug=True)
