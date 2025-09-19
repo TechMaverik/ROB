@@ -24,22 +24,24 @@ def devices():
 
 @app.route("/record-play")
 def record_play():
-    records=Handlers().read_robot_position_records()
-    return render_template("recordplay.html",records=records)
+    records = Handlers().read_robot_position_records()
+    return render_template("recordplay.html", records=records)
 
-@app.route("/memorized-movements",methods=["POST", "GET"])
-def record_play_repeat():    
-    records=Handlers().read_robot_position_records()
+
+@app.route("/memorized-movements", methods=["POST", "GET"])
+def record_play_repeat():
+    records = Handlers().read_robot_position_records()
     if request.method == "POST":
-        if request.form["action"] == "play": 
-            Handlers().play_recorded()           
-            return render_template("recordplay.html",records=records)
-        elif request.form["action"] == "repeat":           
-            return render_template("recordplay.html",records=records)
-        elif request.form["action"] == "clear":   
-            Handlers().robot_position_clear()        
-            return render_template("recordplay.html",records=records)
-    
+        if request.form["action"] == "play":
+            Handlers().play_recorded()
+            return render_template("recordplay.html", records=records)
+        elif request.form["action"] == "repeat":
+            return render_template("recordplay.html", records=records)
+        elif request.form["action"] == "clear":
+            Handlers().robot_position_clear()
+            return render_template("recordplay.html", records=records)
+
+
 @app.route("/move-to-position", methods=["POST", "GET"])
 def robot_position():
     if request.method == "POST":
@@ -63,16 +65,16 @@ def robot_position():
             print(savedposition)
             return render_template("home.html", feedback=savedposition)
         elif request.form["action"] == "clear":
-            Handlers().robot_position_clear()                      
+            Handlers().robot_position_clear()
             return render_template("home.html", feedback=prepositions.HOME_POS)
 
 
 @app.route("/settings", methods=["POST", "GET"])
 def settings():
     if request.method == "POST":
-        # Handle settings form submission here
-        pass
-    return render_template("settings.html")
+        if request.form["action"] == "move":
+            Handlers().add_robot_ip()
+    return render_template("devices.html")
 
 
 if __name__ == "__main__":

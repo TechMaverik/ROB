@@ -46,7 +46,9 @@ class Handlers:
             "end_effector": wrist_roll,
             "pick": gripper,
         }
-        Mappers().record_position(base,shoulder,elbow,wrist_pitch,wrist_roll,gripper)
+        Mappers().record_position(
+            base, shoulder, elbow, wrist_pitch, wrist_roll, gripper
+        )
         self.robot_pos_storage.append(payload)
         return payload
 
@@ -55,11 +57,11 @@ class Handlers:
         Mappers().delete_record()
 
     def read_robot_position_records(self):
-        records=Mappers().select_record()
-        return (records)
-    
+        records = Mappers().select_record()
+        return records
+
     def play_recorded(self):
-        records=Mappers().select_record()
+        records = Mappers().select_record()
         for record in records:
             base = record[1]
             shoulder = record[2]
@@ -78,3 +80,20 @@ class Handlers:
             print(payload)
             feedback = RobSDK().robot_position(payload, "http://10.120.3.170/rob/move/")
 
+    def add_robot_ip(self):
+        ip = request.form.get("ip")
+        self.robot_ip_address = ip
+        print(ip)
+        Mappers().add_configurations((ip,))
+        return ip
+
+    def delete_robot_ip(self):
+        Mappers().delete_configuration()
+        self.robot_ip_address = ""
+        return "Deleted"
+
+    def get_robot_ip(self):
+        records = Mappers().select_configuration()
+        for record in records:
+            ip = record[1]
+        return ip
