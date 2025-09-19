@@ -31,4 +31,4 @@ The baremetal interfacing and control system code is written in Micropython for 
 ## Alternative steps to run ROB-Studio
 1. Follow the steps till line number 3
 2. Now run <code>source .rob/bin/activate </code>
-3. Now run python run.py
+3. Now run <code>python run.py</code>
