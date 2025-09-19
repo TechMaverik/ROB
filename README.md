@@ -1,4 +1,6 @@
 # ROB - Robotics On Board
+<image src="static/studio.png" height=300px width=300px></image>
+
 The project ROB is a robotic arm developed with in-house software, hardware assembly, and custom PCB design. ROB-Studio is the software used to interact with the robot.  
 Version 1.0 features a 5-degree-of-freedom robotic arm powered by 6 servo motors, capable of lifting up to 50 g of payload. ROB-Studio is made using the software framework 
 called HL-Engine 3, which acts as a middleware to communicate with Hardware and Software.
@@ -32,3 +34,11 @@ The baremetal interfacing and control system code is written in Micropython for 
 1. Follow the steps till line number 3
 2. Now run <code>source .rob/bin/activate </code>
 3. Now run <code>python run.py</code>
+
+## ROB Studio
+<image src="static/studio Home.png"></image>
+You can control the robor arm by adjusting the slider of each joints and by pressing the Move button. Inorder to record the particular orienttation, one has to adjust the arm and press the Record Button.
+<image src="static/studio record.png"></image>
+Your recorded operations can be seen under Record and Play tab. You can start running the application by pressing the Play button.
+<image src="static/studio Device.png"></image>
+You can connect the ROB studion to the ROB by entering the IP Address displayed on ROB OLED Display. A sample is shown above.
