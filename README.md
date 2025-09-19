@@ -36,9 +36,9 @@ The baremetal interfacing and control system code is written in Micropython for 
 3. Now run <code>python run.py</code>
 
 ## ROB Studio
-<image src="static/studio Home.png"></image>
+<image src="static/StudioHome.png"></image>
 You can control the robor arm by adjusting the slider of each joints and by pressing the Move button. Inorder to record the particular orienttation, one has to adjust the arm and press the Record Button.
-<image src="static/studio record.png"></image>
+<image src="static/StudioRecord.png"></image>
 Your recorded operations can be seen under Record and Play tab. You can start running the application by pressing the Play button.
-<image src="static/studio Device.png"></image>
+<image src="static/StudioDevice.png"></image>
 You can connect the ROB studion to the ROB by entering the IP Address displayed on ROB OLED Display. A sample is shown above.
