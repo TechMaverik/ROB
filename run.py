@@ -9,7 +9,10 @@ app = Flask(__name__)
 
 @app.route("/about")
 def version():
-    return {"device": "Rob Studio", "version": "1.0.0", "status": "active"}
+    try:
+        return {"device": "Rob Studio", "version": "1.0.0", "status": "active"}
+    except:
+        return render_template("error.html")
 
 
 @app.route("/")
@@ -24,14 +27,20 @@ def about():
 
 @app.route("/devices")
 def devices():
-    ip = Handlers().select_configuration()
-    return render_template("devices.html", ip=ip)
+    try:
+        ip = Handlers().select_configuration()
+        return render_template("devices.html", ip=ip)
+    except:
+        return render_template("error.html")
 
 
 @app.route("/record-play")
 def record_play():
-    records = Handlers().read_robot_position_records()
-    return render_template("recordplay.html", records=records)
+    try:
+        records = Handlers().read_robot_position_records()
+        return render_template("recordplay.html", records=records)
+    except:
+        return render_template("error.html")
 
 
 @app.route("/memorized-movements", methods=["POST", "GET"])
@@ -90,9 +99,12 @@ def settings():
             return render_template("devices.html", ip=ip_address)
 
         if request.form["action"] == "test":
-            status = Handlers().test_robot_connection()
-            print(status)
-            return render_template("devices.html", status=status)
+            try:
+                status = Handlers().test_robot_connection()
+                print(status)
+                return render_template("devices.html", status=status)
+            except:
+                return render_template("error.html")
 
 
 if __name__ == "__main__":

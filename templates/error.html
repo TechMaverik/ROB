@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ROB Studio</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+  body {
+    background: linear-gradient(135deg, #444 0%, #444 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+  }
+  .sidebar {
+    width: 200px;
+    background-color: #1a1a1a;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .sidebar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    display: block;
+    text-align: center;
+  }
+  .sidebar a:hover {
+    background-color: #444;
+  }
+  .main-content {
+    flex-grow: 1;
+    padding: 30px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 15px;
+    margin: 20px;
+    max-width: 1200px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #e0e0e0;
+  }
+  .form-label {
+    font-weight: 600;
+  }
+  .slider-value {
+    font-weight: 700;
+    color: #ffd700;
+    margin-left: 10px;
+    min-width: 30px;
+    display: inline-block;
+  }
+  .button-row {
+    /* display: flex; */
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+  }
+  button {
+    min-width: 100px;
+  }
+  /* Black background for buttons */
+  .btn-custom-black {
+    background-color: black;
+    color: white;
+    border: 1px solid #444;
+  }
+  .btn-custom-black:hover {
+    background-color: #222;
+    color: white;
+  }
+</style>
+</head>
+<body>
+  <div class="sidebar">
+    <image src="/static/studio.png" alt="Logo" style="width:100%; height:auto;">
+    <a href="/">Controls</a>   
+    <a href="/devices">Devices</a>
+    <a href="/record-play">Record & Play</a>
+    <a href="#">About Team</a>
+    <br>
+    <br>
+    <br>
+    <br>    
+    <br>
+    
+    Powered by
+    <image src="/static/hlengine3.png" alt="Logo" style="width:100%; height:auto;"></image>
+    
+    
+  </div>
+  <div class="main-content">
+     <h2 style="color:red">!!! SERVER PANICKED !!!</h2>
+     <br>
+     <br>
+     Try again by pressing back button in your web browser.
+     <br>
+     If this page shows up again, please restart the ROBOTIC ARM.
+        <br>
+        <br>
+        <br>
+     POSSIBLE SOLUTIONS:
+     <br>
+     <br>
+     <list>
+      <ol>Check the IP Address of the robot arm entered correctly in ROB Studio.</ol>
+      <ol>Check I2C pins are connected correctly in PCA9685 Driver.</ol>
+      <ol>Power OFF the robot arm and RESTART the device after 10 seconds</ol>
+     </list>
+
+
+  </div>
+ 
+<script>
+  function updateValue(sliderId, valueId) {
+    const slider = document.getElementById(sliderId);
+    const valueSpan = document.getElementById(valueId);
+    valueSpan.textContent = slider.value + '°';
+    slider.oninput = () => {
+      valueSpan.textContent = slider.value + '°';
+    };
+  }
+  updateValue('slider1', 'value1');
+  updateValue('slider2', 'value2');
+  updateValue('slider3', 'value3');
+  updateValue('slider4', 'value4');
+  updateValue('slider5', 'value5');
+  updateValue('slider6', 'value6');
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
