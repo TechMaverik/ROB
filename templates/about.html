@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ROB Studio</title>
+<title>ROB Studio Devices</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 <style>
   body {
@@ -83,7 +83,7 @@
 </head>
 <body>
   <div class="sidebar">
-    <image src="/static/studio.png" alt="Logo" style="width:100%; height:auto;">
+    <image src="/static/studio.png" alt="Logo" style="width:100%; height:auto;"></image>
     <a href="/">Controls</a>   
     <a href="/devices">Devices</a>
     <a href="/record-play">Record & Play</a>
@@ -96,56 +96,43 @@
     
     Powered by
     <image src="/static/hlengine3.png" alt="Logo" style="width:100%; height:auto;"></image>
+   
     
     
   </div>
   <div class="main-content">
-    <!-- <h1>ROB Studio</h1> -->
-    <form action="move-to-position" method="post">
-      <div class="mb-4">
-        <label for="slider1" class="form-label">Joint 1 (Base Rotation)</label>
-        <input type="range" class="form-range" min="0" max="180" value="{{ feedback['base'] }}" id="slider1" name="slider1" />
-        <span class="slider-value" id="value1">90°</span>
-      </div>
-      <div class="mb-4">
-        <label for="slider2" class="form-label">Joint 2 (Shoulder)</label>
-        <input type="range" class="form-range" min="0" max="180" value="{{ feedback['shoulder'] }}" id="slider2" name="slider2" />
-        <span class="slider-value" id="value2">90°</span>
-      </div>
-      <div class="mb-4">
-        <label for="slider3" class="form-label">Joint 3 (Elbow)</label>
-        <input type="range" class="form-range" min="0" max="180" value="{{ feedback['elbow'] }}" id="slider3" name="slider3" />
-        <span class="slider-value" id="value3">90°</span>
-      </div>
-      <div class="mb-4">
-        <label for="slider4" class="form-label">Joint 4 (Wrist Pitch)</label>
-        <input type="range" class="form-range" min="0" max="180" value="{{ feedback['wrist'] }}" id="slider4" name="slider4" />
-        <span class="slider-value" id="value4">90°</span>
-      </div>
-      <div class="mb-4">
-        <label for="slider5" class="form-label">Joint 5 (Wrist Roll)</label>
-        <input type="range" class="form-range" min="0" max="180" value="{{ feedback['end_effector'] }}" id="slider5" name="slider5" />
-        <span class="slider-value" id="value5">90°</span>
-      </div>
-      <div class="mb-4">
-        <label for="slider6" class="form-label">Joint 6 (Gripper)</label>
-        <input type="range" class="form-range" min="0" max="180" value="{{ feedback['pick'] }}" id="slider6" name="slider6" />
-        <span class="slider-value" id="value6">90°</span>
-      </div>
-      <div class="mb-4">
-                 
-        <button type="submit" class="btn btn-custom-black" name="action" value="move">Move</button>
-        <!-- <button type="submit" class="btn btn-custom-black" name="action" value="home">Home</button>         -->
-        <button type="submit" class="btn btn-custom-black" name="action" value="test">Test Motors</button>
-        <button type="submit" class="btn btn-custom-black" name="action" value="record">Record</button>
-        <button type="submit" class="btn btn-custom-black" name="action" value="clear">Clear Records</button>
-       
+    <form action="/settings" method="post">
+      <image src="/static/Team.jpeg" style="align-items: center;"></image>
 
-      </div>
+      <br>
+      <br>
+    <h1 style="color:goldenrod">ROB Studio R&D Team</h1>
+    <br>      
+    <br>
+<b>1. Software Architect – Akhil Jacob</b> <br>
+Akhil defines the core software architecture of ROB Studio, ensuring stability, modular design, and scalable deployment. He is also the lead developer behind HL Engine, a middleware framework that powers ROB Studio’s robotic applications, enabling smooth communication between hardware and software layers.
+    <br>
+    <br>
+<b>2. Design Architect – Samrat Tiwari<br></b>
+Samrat leads the mechanical design of ROB Studio’s robotics solutions. His expertise lies in creating precise mechanical structures, motion designs, and system integration layouts that ensure efficiency, durability, and optimal hardware performance within robotic systems.
+    <br>
+    <br>
+<b>3. Software Manual Testing – Divya Chadha <br></b>
+Divya ensures quality assurance through structured manual testing. She validates features, checks system stability across different workflows, and documents edge cases to guarantee that ROB Studio delivers a robust and user-friendly experience before deployment.
+<b>4. Hardware Specialist – Shashang <br></b>
+Shashang brings expertise in integrating servo systems, motor drivers, and embedded PCB designs with ROB Studio software. He ensures that hardware-software interaction is seamless, reliable, and optimized for real-world robotics use.
+    <br>
+    <br>
+<b>5. Hardware Specialist – Ajay <br></b>
+Ajay works alongside Shashang to manage hardware prototyping, assembly precision, and troubleshooting. His role focuses on ensuring consistency in hardware performance, safety standards, and supporting the testing of new modules.
+    <br>
+    <br>
+
+      
     </form>
     
   </div>
- 
+
 <script>
   function updateValue(sliderId, valueId) {
     const slider = document.getElementById(sliderId);

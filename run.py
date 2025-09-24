@@ -17,6 +17,11 @@ def home():
     return render_template("home.html", feedback=prepositions.HOME_POS)
 
 
+@app.route("/team")
+def about():
+    return render_template("about.html")
+
+
 @app.route("/devices")
 def devices():
     ip = Handlers().select_configuration()
