@@ -4,7 +4,7 @@ import configurations as config
 import prepositions
 
 
-class MotionPlannet:
+class MotionPlanner:
 
     def __init__(self) -> None:
         self.dir_pin1 = Pin(config.DIR_PIN_1, Pin.OUT)

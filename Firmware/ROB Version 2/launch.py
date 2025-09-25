@@ -1,6 +1,5 @@
 import socket
 import ujson
-import time
 import configurations
 from wifi_con import WifiCon
 from motion_planner import MotionPlanner
@@ -38,7 +37,7 @@ while True:
                 "message": "Move command received and processed",
             }
             response = configurations.OK_HEADER + ujson.dumps(response_data)
-            MotionPlanner().move_robot(delay=10000, payload=data)
+            MotionPlanner().move_robot(delay=0.001, payload=data)
         else:
             response = configurations.BAD_HEADER + ujson.dumps(
                 {"error": "Invalid JSON"}
